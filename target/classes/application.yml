@@ -4,15 +4,15 @@ spring:
 
   datasource:
     url: jdbc:postgresql://localhost:5432/ratemyrental
-    username: postgres
-    password: postgres
+    username: shrishailsql
+    password: Shri@55word
     driver-class-name: org.postgresql.Driver
     hikari:
       initialization-fail-timeout: 0
 
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -24,11 +24,6 @@ spring:
     enabled: false
     locations: classpath:db/migration
     baseline-on-migrate: true
-  
-  autoconfigure:
-    exclude:
-      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
 
 server:
   port: 8080
