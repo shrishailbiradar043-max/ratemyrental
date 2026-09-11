@@ -3,16 +3,16 @@ spring:
     name: ratemyrental
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/ratemyrental
-    username: shrishailsql
-    password: Shri@55word
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
     hikari:
       initialization-fail-timeout: 0
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -21,7 +21,7 @@ spring:
     open-in-view: false
 
   flyway:
-    enabled: false
+    enabled: true
     locations: classpath:db/migration
     baseline-on-migrate: true
 
